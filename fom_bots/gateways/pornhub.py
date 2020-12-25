@@ -1,21 +1,22 @@
-from typing import List
-
 import requests
+from bs4 import BeautifulSoup
 
-API_URL = "http://www.pornhub.com/webmasters"
-SEARCH_URL = API_URL + '/search'
-
-
-def search_videos(query: str) -> List[dict]:
-    response = requests.get(
-        SEARCH_URL,
-        params={'search': query, 'thumbnails': 'all'}
-    )
-    response.raise_for_status()
-    return response.json()
+PORNHUB_BASE_URL = 'http://www.pornhub.com/video/search'
+PORNHUB_HEADERS = {"Content-Type": "text/html; charset=UTF-8"}
 
 
-def get_top_video_url(query: str) -> str:
-    videos = search_videos(query)
-    if videos:
-        return videos[0].get('url')
+def search_videos(search_string: str) -> str:
+    payload = {"search": "", "page": 1}
+    keywords = search_string.split()
+    for item in keywords:
+        if (item == "professional") or (item == "pro"):
+            payload["p"] = "professional"
+        elif (item == "homemade") or (item == "home"):
+            payload["p"] = "homemade"
+        else:
+            payload["search"] += (item + " ")
+
+    r = requests.get(PORNHUB_BASE_URL, params=payload, headers=PORNHUB_HEADERS)
+    b = BeautifulSoup(r.text, "lxml")
+    video = b.find_all("div", {"class": "phimage"})[0]
+    return 'http://www.pornhub.com' + video.find("a", href=True).attrs["href"]
