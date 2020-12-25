@@ -10,7 +10,7 @@ COMMANDS = {
     'Gagme': '\\jordan',
     'Waah Shayne': '\\shayne',
     'Random Bible Verse': '\\bible',
-    # 'Urban Dictionary': '\\urban <word>',
+    'Urban Dictionary': '\\urban <word>',
     'GIF Search': '\\gif <word>',
     'Pornhub Search': '\\porn <word>'
 }
