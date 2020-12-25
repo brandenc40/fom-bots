@@ -4,7 +4,8 @@ from groupme_bot import Bot
 
 from handlers import (
     groupme, gaming, xxx, insult,
-    help, miscellaneous, urban_dictionary
+    help, miscellaneous, urban_dictionary,
+    gif
 )
 
 douchebot = Bot(
@@ -26,3 +27,4 @@ douchebot.add_callback_handler(r'^\\horn', miscellaneous.purple_pills)
 douchebot.add_callback_handler(r'^\\gagme', miscellaneous.flooring_america)
 douchebot.add_callback_handler(r'^\\shayne', miscellaneous.baby_crying)
 douchebot.add_callback_handler(r'^\\urban', urban_dictionary.urban_dictionary_search)
+douchebot.add_callback_handler(r'^\\gif', gif.search_gif)
