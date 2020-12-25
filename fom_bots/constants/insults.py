@@ -3,7 +3,8 @@ INSULTS = {
     1: "I would insult you back but Mother Natures has already done such a fine job, I just couldn't compete.",
     2: "I'm a lot better than what you have to look at in the mirror every morning",
     3: "I thought I said goodbye to you this morning when I flushed the toilet",
-    4: "Funny you should call me an ugly bitch, your daddy likes to call me princess and other beautiful names, while he is dry humping my leg",
+    4: "Funny you should call me an ugly bitch, your daddy likes to call me princess and other beautiful names, "
+       "while he is dry humping my leg",
     5: "I love it when you call me by your mom's name... Turns me on.",
     6: "I could eat a whole bowl of alphabet soup, shit it out, and have something better than u just said.",
     7: "Look who's talking about themselves again",
@@ -56,7 +57,8 @@ INSULTS = {
     54: "You would be much more likable if it wasn't for that hole in your mouth that noise comes out of.",
     55: "I'm fat because every time I did your mom she gave me a cookie",
     56: "If you got a problem, take it up with my ass because that the only thing that give a crap",
-    57: "You should wear a condom on your head because if you're going act like a dick, you might as well dress like one",
+    57: "You should wear a condom on your head because if you're going act like a dick, you might as well dress like "
+        "one",
     58: "I'm sorry, talking with you sounds about as appealing as playing leapfrog with unicorns",
     59: "Why don't you go outside and play hide and go fuck yourself",
     60: "I can't seem to find my dick.. mind if I look you your mothers mouth",
