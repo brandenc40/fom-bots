@@ -1,3 +1,5 @@
+from random import randint
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -18,5 +20,6 @@ def search_videos(search_string: str) -> str:
 
     r = requests.get(PORNHUB_BASE_URL, params=payload, headers=PORNHUB_HEADERS)
     b = BeautifulSoup(r.text, "lxml")
-    video = b.find_all("div", {"class": "phimage"})[0]
+    videos = b.find_all("div", {"class": "phimage"})
+    video = videos[randint(0, len(videos) - 1)]
     return 'http://www.pornhub.com' + video.find("a", href=True).attrs["href"]

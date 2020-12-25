@@ -11,7 +11,7 @@ def porn(ctx: Context):
     res = re.search(r'^\\porn([a-zA-Z0-9 -_]+)', ctx.callback.text.lower())
     if res:
         query_string = res.group(1).strip()
-        url = pornhub.get_top_video_url(query_string)
+        url = pornhub.search_videos(query_string)
         ctx.bot.post_message(url)
 
 
