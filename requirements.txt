@@ -10,7 +10,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 lxml==4.6.2
 MarkupSafe==1.1.1
-pytz==2020.4
+pytz==2020.5
 requests==2.25.1
 six==1.15.0
 soupsieve==2.1
