@@ -1,4 +1,5 @@
 import re
+from random import choice
 
 from groupme_bot import Context, ImageAttachment
 
@@ -11,12 +12,17 @@ def porn(ctx: Context):
     res = re.search(r'^\\porn([a-zA-Z0-9 -_]+)', ctx.callback.text.lower())
     if res:
         query_string = res.group(1).strip()
-        url = pornhub.search_videos(query_string)
-        ctx.bot.post_message(url)
+    else:
+        query_string = choice(['tits', 'ass', 'sexy'])
+    url = pornhub.search_videos(query_string)
+    ctx.bot.post_message(url)
 
 
 @handle_exceptions
 def nsfw(ctx: Context):
     url = reddit.get_random_image('nsfw')
-    gm_url = ctx.bot.image_url_to_groupme_image_url(url)
-    ctx.bot.post_message(url, [ImageAttachment(image_url=gm_url)])
+    try:
+        gm_url = ctx.bot.image_url_to_groupme_image_url(url)
+        ctx.bot.post_message(url, [ImageAttachment(image_url=gm_url)])
+    except Exception:
+        ctx.bot.post_message(url)
