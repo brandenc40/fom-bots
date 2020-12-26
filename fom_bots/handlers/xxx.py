@@ -23,6 +23,6 @@ def nsfw(ctx: Context):
     url = reddit.get_random_image('nsfw')
     try:
         gm_url = ctx.bot.image_url_to_groupme_image_url(url)
-        ctx.bot.post_message(url, [ImageAttachment(image_url=gm_url)])
+        ctx.bot.post_message("", [ImageAttachment(image_url=gm_url)])
     except Exception:
         ctx.bot.post_message(url)
