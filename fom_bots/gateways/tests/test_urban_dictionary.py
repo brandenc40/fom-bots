@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from .urban_dictionary import get_urban_dict
+from ..urban_dictionary import get_urban_dict
 
 
 class Test(TestCase):

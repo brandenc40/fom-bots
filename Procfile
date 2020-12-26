@@ -1,1 +1,1 @@
-web: python fom_bots/main.py
+web: make run

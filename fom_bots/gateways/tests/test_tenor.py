@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from .tenor import search_gif
+from ..tenor import search_gif
 
 
 class Test(TestCase):

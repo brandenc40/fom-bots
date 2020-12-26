@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from .insult import get_insult
+from ..insult import get_insult
 
 
 class Test(TestCase):

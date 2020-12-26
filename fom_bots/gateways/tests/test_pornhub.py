@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from .pornhub import search_videos
+from ..pornhub import search_videos
 
 
 class Test(TestCase):

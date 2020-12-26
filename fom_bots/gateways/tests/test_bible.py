@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from .bible import random_bible_verse
+from ..bible import random_bible_verse
 
 
 class Test(TestCase):

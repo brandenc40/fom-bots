@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from .reddit import get_random_image
+from ..reddit import get_random_image
 
 
 class Test(TestCase):
