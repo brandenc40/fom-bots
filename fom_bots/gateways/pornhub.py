@@ -10,6 +10,7 @@ def search_videos(search_string: str) -> str:
     )
     res.raise_for_status()
     json = res.json()
-    videos = json['videos']
-    video = videos[randint(0, min(len(videos) - 1, 5))]
-    return video['url']
+    videos = json.get('videos')
+    if videos:
+        video = videos[randint(0, min(len(videos) - 1, 5))]
+        return video['url']

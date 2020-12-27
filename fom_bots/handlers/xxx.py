@@ -15,7 +15,10 @@ def porn(ctx: Context):
     else:
         query_string = choice(['tits', 'ass', 'sexy'])
     url = pornhub.search_videos(query_string)
-    ctx.bot.post_message(url)
+    if url:
+        ctx.bot.post_message(url)
+    else:
+        ctx.bot.post_message(f"Nothing found for {query_string} you fucking pervert")
 
 
 @handle_exceptions
