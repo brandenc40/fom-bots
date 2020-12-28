@@ -22,18 +22,9 @@ def random_bible_verse():
 def _random_bible_verse() -> str:
     r = requests.get('https://dailyverses.net/random-bible-verse')
     soup = BeautifulSoup(r.text, 'lxml')
-    verse_div = soup.findAll("div", {"class": "bibleVerse"})[0]
-    out = ''
-    chapter = ''
-    for content in verse_div.contents:
-        if str(content) == '<br/>':
-            out += ' '
-        elif str(content).startswith('<div class="bibleChapter">'):
-            chapter = content.findAll("div", {"class": "reference"})[0].text
-        elif str(content).startswith('<'):
-            continue
-        else:
-            out += content
+    verse_div = soup.findAll("div", {"class": "b1"})[0]
+    out = verse_div.contents[0].text
+    chapter = verse_div.contents[1].contents[0].text
     return out + ' - ' + chapter
 
 
