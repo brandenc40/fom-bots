@@ -4,7 +4,7 @@ bs4==0.0.1
 certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
-groupme-bot==0.1.12
+groupme-bot==0.2.1
 h11==0.11.0
 idna==2.10
 lxml==4.6.2
@@ -15,4 +15,5 @@ soupsieve==2.1
 starlette==0.14.1
 tzlocal==2.1
 urllib3==1.26.2
-uvicorn==0.13.2
+uvicorn==0.13.3
+uvloop==0.14.0
