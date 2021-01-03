@@ -13,6 +13,7 @@ def porn(ctx: Context):
     if res:
         query_string = res.group(1).strip()
     else:
+        # my friends are perverts, sorry mom
         query_string = choice(['tits', 'ass', 'sexy'])
     url = pornhub.search_videos(query_string)
     if url:

@@ -4,7 +4,7 @@ bs4==0.0.1
 certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
-groupme-bot==0.2.3
+groupme-bot==0.2.5
 h11==0.11.0
 idna==2.10
 lxml==4.6.2
