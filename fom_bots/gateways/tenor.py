@@ -1,6 +1,6 @@
-import os
-
 import requests
+
+import config
 
 
 def search_gif(query: str) -> str:
@@ -11,7 +11,7 @@ def search_gif(query: str) -> str:
     :return str: The gif image url
     """
     params = {
-        'key': os.environ.get('TENOR_API'),
+        'key': config.TENOR_API,
         'q': query,
         'locale': 'en_US',
         'contentfilter': 'off',

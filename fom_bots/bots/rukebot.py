@@ -1,14 +1,13 @@
-import os
-
 from groupme_bot import Bot
 
+import config
 from handlers import bible
 
 rukebot = Bot(
     "RukeBot",
-    bot_id=os.environ.get('RUKEBOT_ID'),
-    groupme_api_token=os.environ.get('GROUPME_API_TOKEN'),
-    group_id=os.environ.get('FOM_GROUP_ID')
+    bot_id=config.RUKEBOT_ID,
+    groupme_api_token=config.GROUPME_API_TOKEN,
+    group_id=config.FOM_GROUP_ID
 )
 
 rukebot.add_callback_handler(r'^\\bible', bible.random_bible_verse)

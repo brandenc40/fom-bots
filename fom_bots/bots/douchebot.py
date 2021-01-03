@@ -1,7 +1,6 @@
-import os
-
 from groupme_bot import Bot
 
+import config
 from handlers import (
     groupme, gaming, xxx, insult,
     help, miscellaneous, urban_dictionary,
@@ -10,9 +9,9 @@ from handlers import (
 
 douchebot = Bot(
     "Douchebot",
-    bot_id=os.environ.get('DOUCHEBOT_ID'),
-    groupme_api_token=os.environ.get('GROUPME_API_TOKEN'),
-    group_id=os.environ.get('FOM_GROUP_ID')
+    bot_id=config.DOUCHEBOT_ID,
+    groupme_api_token=config.GROUPME_API_TOKEN,
+    group_id=config.FOM_GROUP_ID
 )
 
 douchebot.add_callback_handler(r'douche', insult.random_insult)
