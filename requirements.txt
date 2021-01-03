@@ -1,4 +1,4 @@
 bs4==0.0.1
-groupme-bot==0.2.5
+groupme-bot==0.2.7
 lxml==4.6.2
 requests==2.25.1
