@@ -69,7 +69,7 @@ def _build_profile_dict(users: List[str]) -> dict:
 def _build_id_list(users: List[str]) -> List[str]:
     out = []
     for user in users:
-        out.append(GAMER_TAGS['user']['groupme_id'])
+        out.append(GAMER_TAGS[user]['groupme_id'])
     return out
 
 
