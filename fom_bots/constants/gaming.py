@@ -59,30 +59,37 @@ GAMER_TAGS = {
 }
 
 
-def _build_profile_list(users: List[str]) -> dict:
+def _build_profile_dict(users: List[str]) -> dict:
     out = {}
     for user in users:
         out[user] = GAMER_TAGS[user]
     return out
 
 
-COD_PROFILES = _build_profile_list([
+def _build_id_list(users: List[str]) -> List[str]:
+    out = []
+    for user in users:
+        out.append(GAMER_TAGS['user']['groupme_id'])
+    return out
+
+
+COD_PROFILES = _build_profile_dict([
     'jordan', 'branden', 'drew', 'tom',
     'horn', 'lroll', 'shayne', 'ruke',
     'tyler', 'michael'
 ])
 
-FIFA_PROFILES = _build_profile_list([
+FIFA_PROFILES = _build_profile_dict([
     'branden', 'tom', 'lroll',
     'shayne', 'michael', 'josh'
 ])
 
-PGA_PROFILES = _build_profile_list([
+PGA_PROFILES = _build_profile_dict([
     'branden', 'lroll', 'shayne', 'horn',
     'josh', 'tyler', 'ruke', 'tom'
 ])
 
-QC_FOM = _build_profile_list([
+QC_FOM = _build_id_list([
     'shayne', 'horn', 'tyler', 'ruke',
-    'tom', 'drew', 'jordan', 'branden'
+    'tom', 'drew', 'jordan'
 ])
