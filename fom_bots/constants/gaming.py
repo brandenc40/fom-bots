@@ -84,5 +84,5 @@ PGA_PROFILES = _build_profile_list([
 
 QC_FOM = _build_profile_list([
     'shayne', 'horn', 'tyler', 'ruke',
-    'tom', 'drew', 'jordan'
+    'tom', 'drew', 'jordan', 'branden'
 ])
