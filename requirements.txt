@@ -2,3 +2,4 @@ bs4==0.0.1
 groupme-bot==0.2.8
 lxml==4.6.2
 requests==2.25.1
+psycopg2-binary==2.8.6
