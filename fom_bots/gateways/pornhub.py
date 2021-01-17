@@ -12,5 +12,5 @@ def search_videos(search_string: str) -> str:
     json = res.json()
     videos = json.get('videos')
     if videos:
-        video = videos[randint(0, min(len(videos) - 1, 5))]
+        video = videos[randint(0, min(len(videos) - 1, 3))]
         return video['url']
