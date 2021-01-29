@@ -16,7 +16,7 @@ def insult(ctx: Context):
 
 @handle_exceptions
 def translate(ctx: Context):
-    sr = re.search(r'\\pirate([a-zA-Z0-9 -_]+)', ctx.callback.text)
+    sr = re.search(r'\\pirate(.+)', ctx.callback.text)
     if sr:
         q_str = sr.group(1).strip()
         if q_str:
