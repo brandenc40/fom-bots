@@ -14,6 +14,7 @@ DOUCHEBOT_ID = config('DOUCHEBOT_ID', cast=str, default="")
 FOM_GROUP_ID = config('FOM_GROUP_ID', cast=str, default="")
 GROUPME_API_TOKEN = config('GROUPME_API_TOKEN', cast=str, default="")
 RUKEBOT_ID = config('RUKEBOT_ID', cast=str, default="")
+PIRATEBOT_ID = config('PIRATEBOT_ID', cast=str, default="")
 TENOR_API = config('TENOR_API', cast=str, default="")
 DATABASE_URL = config('DATABASE_URL', cast=str, default="")
 
