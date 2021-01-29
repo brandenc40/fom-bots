@@ -11,10 +11,7 @@ NAME_IN_VANE_RESPONSES = [
     "May the Holy Name of God be blessed. Begone satan.",
     "Blessed be thy name.",
     "You're going to Hell.",
-    "The Bible says don't say that.",
-    "You must not misuse the name of the LORD your God. The LORD will not let you go unpunished if you misuse his "
-    "name. - Deuteronomy 5:10-11",
-    "Do not bring shame on the name of your God by using it to swear falsely. I am the LORD. - Leviticus 19:12"
+    "The Bible says don't say that."
 ]
 
 
