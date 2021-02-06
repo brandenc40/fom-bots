@@ -2,6 +2,7 @@ from datetime import datetime
 from enum import Enum
 from functools import wraps
 from random import randint
+from typing import Callable
 
 from groupme_bot import Context, EmojiAttachment
 
@@ -25,14 +26,15 @@ def get_current_period(period: Period):
 
 
 def with_limit(limit_id: str, max_calls: int, period: Period):
-    def decorate(fn):
+    def decorate(fn: Callable):
         @wraps(fn)
         def wrapper(ctx: Context):
+            l_id = limit_id + ctx.bot.bot_name
+            cur_period = get_current_period(period)
             with postgres_cursor(commit=True) as cursor:
-                cur_period = get_current_period(period)
                 cursor.execute(
                     "SELECT calls FROM limits WHERE id = %s AND period = %s",
-                    (limit_id, cur_period,)
+                    (l_id, cur_period,)
                 )
                 out = cursor.fetchone()
                 calls = 0
@@ -55,7 +57,7 @@ def with_limit(limit_id: str, max_calls: int, period: Period):
                     DO 
                        UPDATE SET period = excluded.period, calls = excluded.calls;
                     """,
-                    (limit_id, cur_period, calls)
+                    (l_id, cur_period, calls)
                 )
 
         return wrapper
