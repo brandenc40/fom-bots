@@ -8,7 +8,7 @@ from utils.error_decorator import handle_exceptions
 
 @handle_exceptions
 def urban_dictionary_search(ctx: Context):
-    sr = re.search(r'\\urban([a-zA-Z0-9 -_]+)', ctx.callback.text)
+    sr = re.search(r'\\urban(.+)', ctx.callback.text)
     if sr:
         q_str = sr.group(1).strip()
         if q_str:

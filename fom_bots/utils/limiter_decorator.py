@@ -5,6 +5,7 @@ from random import randint
 from typing import Callable
 
 from groupme_bot import Context, EmojiAttachment
+from pytz import timezone
 
 from storage.postgres import postgres_cursor
 
@@ -16,7 +17,7 @@ class Period(Enum):
 
 
 def get_current_period(period: Period):
-    now = datetime.now()
+    now = datetime.now(timezone('America/Chicago'))
     if period == Period.MINUTE:
         return now.strftime('%Y-%m-%d %H:%M')
     elif period == Period.HOUR:
@@ -47,15 +48,16 @@ def with_limit(limit_id: str, max_calls: int, period: Period):
                             [EmojiAttachment("*", [[1, randint(1, 60)]])]
                         )
                         return
-                calls += 1
                 fn(ctx)
+                calls += 1
                 cursor.execute(
                     """
-                    INSERT INTO limits(id, period, calls) 
+                    INSERT INTO limits(id, period, calls)
                     VALUES(%s, %s, %s)
-                    ON CONFLICT (id) 
-                    DO 
-                       UPDATE SET period = excluded.period, calls = excluded.calls;
+                    ON CONFLICT (id) DO UPDATE
+                    set
+                        period = EXCLUDED.period,
+                        calls = EXCLUDED.calls;
                     """,
                     (l_id, cur_period, calls)
                 )
