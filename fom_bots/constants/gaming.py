@@ -55,6 +55,11 @@ GAMER_TAGS = {
         'gamertag': 'jGilla_94',
         'console': 'psn',
         'groupme_id': '6202937'
+    },
+    'mike': {
+        'gamertag': 'HMickman',
+        'console': 'psn',
+        'groupme_id': '11166935'
     }
 }
 
@@ -81,7 +86,8 @@ COD_PROFILES = _build_profile_dict([
 
 FIFA_PROFILES = _build_profile_dict([
     'branden', 'tom', 'lroll',
-    'shayne', 'michael', 'josh'
+    'shayne', 'michael', 'josh',
+    'mike'
 ])
 
 PGA_PROFILES = _build_profile_dict([

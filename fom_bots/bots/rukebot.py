@@ -10,6 +10,6 @@ rukebot = Bot(
     group_id=config.FOM_GROUP_ID
 )
 
-rukebot.add_callback_handler(r'^[\\|\/]bible', bible.random_bible_verse)
+rukebot.add_callback_handler(r'^[\\\/]bible', bible.random_bible_verse)
 rukebot.add_callback_handler(r'\b(god|jesus|omg|lord|christ)\b', bible.name_in_vane)
 rukebot.add_cron_job(bible.random_bible_verse, hour=9, timezone='America/Chicago')
