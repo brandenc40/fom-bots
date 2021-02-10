@@ -11,5 +11,5 @@ pirate_bot = Bot(
 )
 
 pirate_bot.add_callback_handler(r'^[\\\/]pirate', pirate.translate)
-pirate_bot.add_callback_handler(r'\b(sea|ship|boat|argh|arghh|loot|plunder|pirate|cunt)\b', pirate.insult)
+pirate_bot.add_callback_handler(r'\b(sea|ship|boat|argh|arghh|loot|plunder|cunt)\b', pirate.insult)
 pirate_bot.add_callback_handler(r'\b(shanty)\b', pirate.sea_shanty)
