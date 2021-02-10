@@ -1,6 +1,7 @@
 from groupme_bot import Bot
 
 import config
+from constants import regex
 from handlers import (
     groupme, mentions, xxx, insult,
     help, miscellaneous, urban_dictionary,
@@ -14,17 +15,22 @@ douchebot = Bot(
     group_id=config.FOM_GROUP_ID
 )
 
-douchebot.add_callback_handler(r'douche', insult.random_insult)
-douchebot.add_callback_handler(r'^[\\\/]all', groupme.mention_all)
-douchebot.add_callback_handler(r'^[\\\/]codtime', mentions.cod_time)
-douchebot.add_callback_handler(r'^[\\\/]fifatime', mentions.fifa_time)
-douchebot.add_callback_handler(r'^[\\\/]pgatime', mentions.pga_time)
-douchebot.add_callback_handler(r'^[\\\/]qcfom', mentions.qc_fom)
-douchebot.add_callback_handler(r'^[\\\/]nsfw', xxx.nsfw)
-douchebot.add_callback_handler(r'^[\\\/]porn', xxx.porn)
-douchebot.add_callback_handler(r'^[\\\/]help', help.show_help)
-douchebot.add_callback_handler(r'^[\\\/]horn', miscellaneous.purple_pills)
-douchebot.add_callback_handler(r'^[\\\/]gagme', miscellaneous.flooring_america)
-douchebot.add_callback_handler(r'^[\\\/]shayne', miscellaneous.baby_crying)
-douchebot.add_callback_handler(r'^[\\\/]urban', urban_dictionary.urban_dictionary_search)
-douchebot.add_callback_handler(r'^[\\\/]gif', gif.search_gif)
+handlers = (
+    (regex.DOUCHE, insult.random_insult),
+    (regex.ALL, groupme.mention_all),
+    (regex.COD, mentions.cod_time),
+    (regex.FIFA, mentions.fifa_time),
+    (regex.PGA, mentions.pga_time),
+    (regex.QC, mentions.qc_fom),
+    (regex.NSFW, xxx.nsfw),
+    (regex.PORN, xxx.porn),
+    (regex.HELP, help.show_help),
+    (regex.HORN, miscellaneous.purple_pills),
+    (regex.JORDAN, miscellaneous.flooring_america),
+    (regex.SHAYNE, miscellaneous.baby_crying),
+    (regex.URBAN, urban_dictionary.urban_dictionary_search),
+    (regex.GIF, gif.search_gif)
+)
+
+for handler in handlers:
+    douchebot.add_callback_handler(handler[0], handler[1])

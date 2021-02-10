@@ -3,6 +3,7 @@ from random import choice
 
 from groupme_bot import Context
 
+from constants import regex
 from gateways import pirate
 from utils.error_decorator import handle_exceptions
 from constants.pirate import SONGS
@@ -16,7 +17,7 @@ def insult(ctx: Context):
 
 @handle_exceptions
 def translate(ctx: Context):
-    sr = re.search(r'^[\\\/]pirate(.+)', ctx.callback.text)
+    sr = re.search(regex.PIRATE_TRANSLATE + r'(.+)', ctx.callback.text)
     if sr:
         q_str = sr.group(1).strip()
         if q_str:
